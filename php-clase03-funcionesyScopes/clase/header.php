@@ -1,0 +1,9 @@
+<header>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>Tablets</li>
+      <li>Celu</li>
+    </ul>
+  </nav>
+</header>

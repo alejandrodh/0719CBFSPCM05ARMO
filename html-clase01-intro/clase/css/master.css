@@ -1,0 +1,24 @@
+/* css ppal*/
+
+/* Generales*/
+body{
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: 'Roboto', sans-serif;
+
+}
+
+strong{
+  color: red;
+  font-weight: normal;
+}
+
+.azul {
+  color:blue;
+  font-weight: bold;
+}
+
+/* Estilo párrafos*/
+p{
+  width: 300px;
+  font-size: 18px;
+}

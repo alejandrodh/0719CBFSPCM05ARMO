@@ -1,0 +1,176 @@
+/* Main style Kraftsy*/
+
+/* Estilos Generales */
+*{
+  box-sizing: border-box;
+}
+
+/* Reseteos generales*/
+ul, ol{
+  padding: 0;
+}
+li{
+  list-style-type: none;/* saca los bullets */
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body{
+  background-image: url("../img/bg-2.png")
+}
+/* Cabecera */
+header{
+  overflow: hidden;
+  background-color: #ef4c27;
+  padding: 0 20px;
+  width: 1140px;
+  margin: 0 auto; /* Centrar un bloque */
+}
+.logo{
+  padding-top: 7px;
+}
+.logo,
+.menu {
+  float: left;
+  overflow: hidden;
+}
+.menu{
+  margin-left: 20px;
+}
+.login{
+  float: right;
+  overflow: hidden;
+}
+.menu li,
+.login li {
+  float: left;
+  margin-right: 10px;
+}
+.login li:last-child{
+  margin-right:0;
+}
+.menu li a,
+.login li a{
+  color: #fff;
+}
+
+/* Main */
+.container{
+  width: 1140px;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+main{
+  width: 800px;
+  margin-right: 20px;
+  float: left;
+  background-color: #fff;
+  padding: 10px;
+  overflow: hidden;
+}
+.product{
+  width: 380px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.product:nth-child(even){
+  margin-right: 0;
+}
+.product img {
+  width: 100%;
+}
+.more{
+  display: inline-block;
+  background-color: #ef4c27;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+/* Aside */
+
+.right-col{
+  width: 320px;
+  float:left;
+}
+
+.right-col h2{
+  background-color: #fff;
+  border: 1px solid lightblue;
+  padding: 10px;
+}
+.right-col h2:first-child{
+  margin-top: 0;
+}
+.right-col-inner {
+  background-color: #fff;
+}
+.service{
+  overflow: hidden;
+  border:1px solid lightblue;
+  padding: 10px;
+}
+.service img{
+  float: left;
+  margin-right: 10px;
+}
+.ads{
+  padding: 10px;
+}
+.ads img{
+  margin-bottom: 10px;
+}
+
+/*Login*/
+.container.welcome{
+  width: 400px;
+  margin: 0 auto;
+}
+
+.container.welcome h1{
+  text-align: center;
+  text-transform: uppercase;
+}
+.form-group{
+  margin-bottom: 10px;
+}
+.form-group label{
+  text-transform: capitalize;
+}
+.form-group input{
+  width: 100%;
+  line-height: 20px;
+}
+.form-group .notfullwidth{
+  width: auto;
+}
+.form-group.right{
+  text-align: right;
+}
+.mismatch{
+  color: red;
+}
+.submit{
+  background-color: #3c8dbc;
+  border: 1px solid #3c8dbc;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

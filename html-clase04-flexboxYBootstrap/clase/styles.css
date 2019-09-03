@@ -1,0 +1,10 @@
+.container, .container-fluid{
+  background-color: rgba(255, 0, 0, 0.5);
+}
+article{
+  width: 200px;
+  height: 200px;
+}
+.menu-ppal .btn-secondary{
+  background-color: violet;
+}

@@ -1,0 +1,93 @@
+/* Estilos Flexbox clase virtual*/
+
+/* Reseteos Generales */
+*{
+box-sizing: border-box;
+}
+ul, ol{
+  padding: 0;
+}
+li{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+/* Estilos globales */
+body{
+  background-image: url(../images/bg-body.png);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container{
+  border: 1px solid #dcdcdc;
+  padding: 10px;
+  max-width: 500px;
+}
+
+/* Cards */
+.card{
+  background: #fff;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+.card-image{
+  text-align: center;
+}
+.card-image img{
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px 3px #ccc;
+}
+.social-media{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.social-media a{
+  font-size: 22px;
+  color: #fff;
+  padding: 20px;
+  background-color: #3c8dbc;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-data a{
+  display: inline-block;
+  color: #fff;
+  padding: 10px 12px;
+  background-color: #ccc;
+}
+
+@media (min-width: 560px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

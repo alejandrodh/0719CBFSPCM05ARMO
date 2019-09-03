@@ -1,0 +1,111 @@
+/* Estilos Kitchening*/
+
+/* Reseteos generales */
+*{
+  box-sizing: border-box;
+}
+ul, ol{
+  padding: 0;
+}
+li{
+  list-style-type: none;
+}
+a{
+  color:#000;
+  text-decoration: none;
+}
+
+
+/* Mobile first*/
+body{
+  background-image: url(../images/bg-body.png);
+}
+.main-header, .main-footer{
+  text-align: center;
+}
+.logo{
+  border-radius: 50%;
+  border:1px solid #999;
+}
+.toggle-nav{
+  width: 100%;
+  display: inline-block;
+  margin-top: 10px;
+}
+.toggle-nav .fa-bars{
+  padding: 8px;
+  color: #fff;
+  background: #444;
+}
+
+/* Menú*/
+.main-nav li, .main-footer li{
+  background-color: #444;
+  margin-bottom: 1px;
+}
+.main-nav a, .main-footer li a{
+  text-transform: uppercase;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 0;
+  width: 100%;
+}
+
+/* Banner */
+.banner{
+  display: none;
+}
+
+/* Products */
+.photo-container{
+  position: relative;
+}
+.photo{
+  width: 100%;
+}
+.special{
+  position: absolute;
+  top:0;
+  right: 20px;
+}
+.zoom{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Estilo tablet */
+@media (min-width:768px) {
+  .container{
+    max-width:720px;
+    margin:0 auto;
+  }
+  .banner{
+    display: block;
+  }
+  .banner img{
+    width: 100%;
+  }
+  .vip-products{
+    overflow: hidden;
+  }
+  .product{
+    width:50%;
+    float:left;
+  }
+}
+
+
+
+
+
+
+/**/

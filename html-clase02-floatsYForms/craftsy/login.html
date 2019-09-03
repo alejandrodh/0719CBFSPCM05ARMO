@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Login</title>
+  </head>
+  <body>
+    <header>  <!-- Cabecera con menu -->
+       <a class="logo" href="index.html"> <!-- logo -->
+        <img src="./img/logo.png" alt="">
+      </a>
+      <ul class="menu"> <!-- menu de navegación -->
+        <li><a href="#">Computadoras</a></li>
+        <li><a href="#">tablets</a></li>
+        <li><a href="#">smartphones</a></li>
+      </ul>
+      <ul class="login"> <!-- login/ registro -->
+        <li><a href="login.html">login</a></li>
+        <li><a href="register.html">registro</a></li>
+      </ul>
+
+    </header>
+    <div class="container welcome">
+      <h1>Bienvenido</h1>
+      <form class="" action="login.html" method="get">
+        <div class="form-group">
+          <label for="email">email</label>
+          <input id="email" type="text" name="email" value="" placeholder="email">
+        </div>
+        <div class="form-group">
+          <label for="password">password</label>
+          <input id="password" type="password" name="password" value="" placeholder="password">
+        </div>
+        <div class="form-group right">
+          <input class="notfullwidth" id="rememberme" type="checkbox" name="rememberme" value="">
+          <label for="rememberme">Recordarme</label>
+        </div>
+        <p class="mismatch">La combinación ingresada no es válida.</p>
+        <button class="submit" type="submit">Ingresar</button>
+
+      </form>
+    </div>
+
+
+  </body>
+</html>
