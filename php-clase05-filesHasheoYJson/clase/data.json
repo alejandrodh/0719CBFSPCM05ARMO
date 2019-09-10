@@ -1,0 +1,17 @@
+[
+  {
+    "nombre": "remera",
+    "categoria": "hombre",
+    "precio": 1234
+  },
+  {
+    "nombre": "pantalon",
+    "categoria": "mujer",
+    "precio": 4321
+  },
+  {
+    "nombre": "zapatillas",
+    "categoria": "niños",
+    "precio": 1267
+  }
+]
