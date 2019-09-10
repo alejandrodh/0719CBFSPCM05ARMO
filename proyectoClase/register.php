@@ -11,22 +11,30 @@ if($_POST){
   //tenemos que detectar errores y mostrarlos al usuario.
   $errores = validarRegistro($_POST);
 
-  $nombreOk = $_POST["name"];
+  $nombreOk = trim($_POST["name"]);
+  $emailOk = trim($_POST["email"]);
 
   // Opcional crear if para cada asignación de datos correctos. Solo necesitamos colocar la cariable en el value.
   // if(!isset($errores["email"])){
   //   $emailOk = $_POST["email"];
   // }
 
-
-
   //Si no hay errores;
+  if(!$errores){
+    // Crear un usuario
+    $usuario = armarUsuario();
 
-  // Crear un usuario
+    //Guardarlo en alguna parte
+    guardarUsuario($usuario);
 
-  //Guardarlo en alguna parte
+    //Subir la imagen de perfil
 
-  //Redirigirlo a página Exito;
+    //Auto Loguear usuario (Opcional);
+
+    //Redirigirlo a página Exito;
+    header("Location:index.php");
+    exit;
+    }
 }
 
 
@@ -152,8 +160,12 @@ if($_POST){
 
         <div class="form-group">
           <label for="email">email</label>
-          <input type="text" id="email" class="form-control" placeholder="email" name="email" value="">
-          <span class="small text-danger"></span>
+          <?php if(isset($errores["email"])):?>
+            <input type="text" id="email" class="form-control" placeholder="email" name="email" value="">
+            <span class="small text-danger"></span>
+          <?php else: ?>
+             <input type="text" id="email" class="form-control" placeholder="email" name="email" value="<?= $emailOk?>">
+           <?php endif?>
         </div>
 
         <div class="form-group">
