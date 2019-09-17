@@ -1,0 +1,11 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "userName": "Ale",
+      "email": "ale@dh.com",
+      "password": "$2y$10$uvcrx2X4/ZfYCgAFFCxOLeITe5ncGguBSC.aDs247GPttTeLZyBmO",
+      "tyc": "tyc"
+    }
+  ]
+}
