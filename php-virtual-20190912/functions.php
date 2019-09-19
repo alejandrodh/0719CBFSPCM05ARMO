@@ -110,7 +110,7 @@ function validarLogin($datos){
   }
   //Validar el campo esté completo y que la contraseña se correcta.
   if(strlen($datos['password']) == 0){
-    $errores['login'] = "El campo email es obligatorio.";
+    $errores['login'] = "El campo password es obligatorio.";
   } else if(existeUsuario($datos['email'])){
       $usuario = buscarUsuarioPorMail($datos['email']);
       if(!password_verify($datos['password'], $usuario['password'])){
