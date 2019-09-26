@@ -1,0 +1,28 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "Alejandro",
+            "email": "ale@dh.com",
+            "password": "$2y$10$723pGHduaz4rGUcDtnkuleyKm63ZhiONzSSOYKY9\/IkWCeugVRJF6"
+        },
+        {
+            "id": 2,
+            "nombre": "Karly",
+            "email": "karly@dh.com",
+            "password": "$2y$10$pFRjP7H8LrlIRWDPZ8Tu3enzZXtGsDg\/NdBzNgOF4kiFvfvmgBZ3a"
+        },
+        {
+            "id": 3,
+            "nombre": "Gonzalo",
+            "email": "gonza@dh.com",
+            "password": "$2y$10$pDmVH6r39dyMav9M45\/P6uU44m8EBxNGwi9Df1q6aZ3DMZiuJ1.lO"
+        },
+        {
+            "id": 4,
+            "nombre": "Nacho",
+            "email": "nacho@dh.com",
+            "password": "$2y$10$XZHegVFFRphu7TMU9NJqOuLRXGpoUJK2hMkWGw\/oLnmIterkFGRAC"
+        }
+    ]
+}
