@@ -2,6 +2,11 @@
 // include "funciones.php";
 include "init.php";
 
+//si tengo la cookie entonces logue al usuario.
+if(isset($_COOKIE['email'])){
+  $auth->loguearUsuario($_COOKIE['email']);
+}
+
 if($auth->usuarioLogueado()){
     $usuario = $json->buscarUsuarioPorMail($_SESSION['email']);
 } else {

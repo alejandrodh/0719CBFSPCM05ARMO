@@ -2,15 +2,9 @@
     "usuarios": [
         {
             "id": 1,
-            "name": "Alejandro",
+            "name": "ale",
             "email": "ale@dh.com",
-            "password": "$2y$10$723pGHduaz4rGUcDtnkuleyKm63ZhiONzSSOYKY9\/IkWCeugVRJF6"
-        },
-        {
-            "id": 2,
-            "name": "karly",
-            "email": "karly@dh.com",
-            "password": "$2y$10$Qyn79NqPus5SU4FPF4OxS.s3vcrgy.atMFoGFlu00cr1BwdSehFFq"
+            "password": "$2y$10$xqTKWN7UQf4v0OVtNd.30O6ZvKPFKDQsNVmjzvDjNDAhV0vLnQKIy"
         }
     ]
 }

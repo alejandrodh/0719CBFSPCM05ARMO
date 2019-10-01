@@ -15,7 +15,7 @@ if($_POST){
   var_dump($errores);
 
   if(!$errores){
-    $auth->loguearUsuario();
+    $auth->loguearUsuario($_POST['email']);
       header("Location:index.php");
       exit;
   }
@@ -97,6 +97,10 @@ if($_POST){
             <label for="pass">Password</label>
             <input type="password" id="pass" class="form-control" placeholder="Password" name="password" value="">
               <span class="small text-danger"></span>
+          </div>
+          <div class="form-group">
+            <input id="rememberme" type="checkbox" name="rememberme" value="">
+            <label for="rememberme">Recordarme</label>
           </div>
 
         <button class="btn btn-info" type="submit">Send</button>
