@@ -116,13 +116,13 @@ session_start();
 //   return $errores;
 // }
 
-function loguearUsuario(){
-  $_SESSION["email"] = $_POST["email"];
-}
-
-function usuarioLogueado(){
-  return isset($_SESSION["email"]);
-}
+// function loguearUsuario(){
+//   $_SESSION["email"] = $_POST["email"];
+// }
+//
+// function usuarioLogueado(){
+//   return isset($_SESSION["email"]);
+// }
 
 
 
