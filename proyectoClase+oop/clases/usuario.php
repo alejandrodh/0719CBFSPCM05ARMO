@@ -16,11 +16,16 @@ class Usuario
   {
     // 2 Origenes: 1ra es desde el formulario de registro. 2da
     global $json; //Tremos la instancia de base de datos para poder usarla. Otra opción es pasarla por parámetro.
+    if(isset($array["id"])){
+      $this->id = $array["id"];
+      $this->password = $array["password"];
+    } else {
+      $this->id = $json->nextId(); //nextID();
+      $this->password = password_hash($array["password"], PASSWORD_DEFAULT);
+    }
+    $this->name = $array["name"];
+    $this->email = $array["email"];
 
-    $this->id = $json->nextId(); //nextID();
-    $this->name = $_POST["name"];
-    $this->email = $_POST["email"];
-    $this->password = password_hash($_POST["pass"], PASSWORD_DEFAULT);
 
   }
 

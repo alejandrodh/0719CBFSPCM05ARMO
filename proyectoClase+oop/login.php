@@ -1,15 +1,23 @@
 <?php
-include "funciones.php";
+// include "funciones.php";
+include "init.php";
+
+if($auth->usuarioLogueado()){
+  header("Location:index.php");
+  exit;
+}
 $errores = [];
 
 if($_POST){
 
-  $errores = validarLogin($_POST);
+  // $errores = validarLogin($_POST);
+  $errores = Validator::validarLogin($_POST);
+  var_dump($errores);
 
   if(!$errores){
-    loguearUsuario();
-    header("Location:index.php");
-    exit;
+    $auth->loguearUsuario();
+      header("Location:index.php");
+      exit;
   }
 
 }
@@ -87,7 +95,7 @@ if($_POST){
           </div>
           <div class="form-group">
             <label for="pass">Password</label>
-            <input type="password" id="pass" class="form-control" placeholder="Password" name="pass" value="">
+            <input type="password" id="pass" class="form-control" placeholder="Password" name="password" value="">
               <span class="small text-danger"></span>
           </div>
 

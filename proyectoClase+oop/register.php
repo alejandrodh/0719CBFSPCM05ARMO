@@ -1,7 +1,11 @@
 <?php
-include "funciones.php";
+// include "funciones.php";
 include "init.php";
-include "clases/usuario.php";
+
+if($auth->usuarioLogueado()){
+  header("Location:index.php");
+  exit;
+}
 
 $errores = [];
 $nombreOk = "";
@@ -12,7 +16,9 @@ $emailOk = "";
 if($_POST){
 
   //tenemos que detectar errores y mostrarlos al usuario.
-  $errores = validarRegistro($_POST);
+  // $errores = validarRegistro($_POST);
+  $errores = Validator::validarRegistro($_POST);
+  // var_dump($errores);
 
   $nombreOk = trim($_POST["name"]);
   $emailOk = trim($_POST["email"]);
@@ -175,7 +181,7 @@ if($_POST){
 
         <div class="form-group">
           <label for="pass">Password</label>
-          <input type="password" id="pass" class="form-control" placeholder="Password" name="pass" value="">
+          <input type="password" id="pass" class="form-control" placeholder="Password" name="password" value="">
           <span class="small text-danger"></span>
         </div>
         <div class="form-group">

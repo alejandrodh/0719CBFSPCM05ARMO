@@ -10,3 +10,12 @@ Corresponde a la clase virtual del día 26/9/19.
 5. Incluir la función nextId(). Atención que es un método de otra clase.
 6. Modificar guardarUsuario() para que procese un Objeto de tipo Usuario.
 7. Crear getteres en la clase Usuario para resolver el punto anterior.
+
+### Pasos finales de migración a OOP clase 1/10/2019
+1. Creamos clases Validator para las funciones de validación (validarLogin() y validarRegistro())
+2. Creamos la clase Auth para manejar el inicio de sessión y las funciones `usuarioLogueado()` y `loguearUsuario()`.
+3. Adaptamos la clase Usuario para que cree un objeto usuario identificando si viene desde el form de registro o desde la base json. Lo hicimos preguntando si existe la posición "id" dentro del array.
+4. Reemplazamos en login.php, register.php e index.php todas las llamadas a funciones por llamadas a métodos de clases.
+5. Refactorizamos la función `buscarUsuarioPorMail()` para que develva un objeto Usuario en lugar de un array con los datos del usuario.
+6. Restringimos el acceso a login.php y a register.php a los usuarios que ya están logueados.
+7. Modificamos los atributos "name" de las contraseñas para que todos estén definidos con el valor "password".

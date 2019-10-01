@@ -3,7 +3,9 @@
 /**
  *
  */
-class DbJson
+include "db.php";
+
+class DbJson extends Db
 {
   //Atributos
   private $json;
@@ -20,12 +22,12 @@ class DbJson
   }
 
   //Métodos
-  public function guardarUsuario(Usuario $user, string $file){
+  public function guardarUsuario(Usuario $user, string $file = null){
     $array = json_decode($this->json, true);
     //Pasar el usuario de Objeto a Array.
     $usuario = [
       "id" => $user->getId(),
-      "nombre" => $user->getName(),
+      "name" => $user->getName(),
       "email" => $user->getEmail(),
       "password" =>$user->getPassword(),
     ];
@@ -41,7 +43,10 @@ class DbJson
 
     foreach ($array["usuarios"] as $usuario) {
       if($usuario["email"] == $email){
-        return $usuario; //Debería retornar un Objeto de tipo Usuario.
+        $user = new Usuario($usuario);
+        // var_dump($user);
+        // exit;
+        return $user; //Debería retornar un Objeto de tipo Usuario.
       }
     }
     return null;
