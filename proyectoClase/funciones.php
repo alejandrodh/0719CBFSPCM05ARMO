@@ -67,7 +67,13 @@ function armarUsuario(){
 }
 
 function guardarUsuario($user){
-  $json = file_get_contents("db.json");
+  //¿Qué pasa si no hay archivo .json
+  if(file_exists("db.json")){
+    $json = file_get_contents("db.json");
+  } else{
+    $json = "";
+  }
+  
   $array = json_decode($json, true);
   $array["usuarios"][] = $user;
 
@@ -77,7 +83,12 @@ function guardarUsuario($user){
 
 function buscarUsuarioPorMail($email){
   //¿Qué pasa si no hay archivo .json
-  $json = file_get_contents("db.json");
+  if(file_exists("db.json")){
+    $json = file_get_contents("db.json");
+  } else{
+    $json = "";
+  }
+
   $array = json_decode($json, true);
 
   foreach ($array["usuarios"] as $usuario) {
@@ -112,12 +123,17 @@ function validarLogin($datos){
     $errores["pass"] = "La contraseña ingresada es incorrecta";
     }
   }
-  
+
   return $errores;
 }
 
-function loguearUsuario(){
-  $_SESSION["email"] = $_POST["email"];
+function loguearUsuario($email){
+  $_SESSION["email"] = $email;
+
+  if(isset($_POST["rememberme"])){
+    setcookie('email', $email, time()+60*60);
+  }
+
 }
 
 function usuarioLogueado(){

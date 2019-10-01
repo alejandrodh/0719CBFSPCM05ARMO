@@ -90,7 +90,10 @@ if($_POST){
             <input type="password" id="pass" class="form-control" placeholder="Password" name="pass" value="">
               <span class="small text-danger"></span>
           </div>
-
+          <div class="form-group">
+            <input id="rememberme" type="checkbox" name="rememberme" value="">
+            <label for="rememberme">Recordarme</label>
+          </div>
         <button class="btn btn-info" type="submit">Send</button>
         </form>
       </div>

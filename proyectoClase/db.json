@@ -1,34 +1,16 @@
 {
-    "usuarios": [
-        {
-            "id": 1,
-            "nombre": "Alejandro",
-            "email": "ale@dh.com",
-            "password": "$2y$10$723pGHduaz4rGUcDtnkuleyKm63ZhiONzSSOYKY9\/IkWCeugVRJF6"
-        },
-        {
-            "id": 2,
-            "nombre": "Karly",
-            "email": "karly@dh.com",
-            "password": "$2y$10$pFRjP7H8LrlIRWDPZ8Tu3enzZXtGsDg\/NdBzNgOF4kiFvfvmgBZ3a"
-        },
-        {
-            "id": 3,
-            "nombre": "Gonza",
-            "email": "gonza@dh.com",
-            "password": "$2y$10$labC\/0UPc2PfHuv\/xZr1qOMR\/tfmEY7ipUv\/HGNFthqURqWVpywsa"
-        },
-        {
-            "id": 4,
-            "nombre": "Herni",
-            "email": "herni@dh.com",
-            "password": "$2y$10$r.ISJq3HzhHZAQbZrA0fV.zg.ii8nwcun2ZsW2ANO.nfk\/nWNcnxG"
-        },
-        {
-            "id": 5,
-            "nombre": "Nacho",
-            "email": "nacho@dh.com",
-            "password": "$2y$10$xLCYhw4Hj5eUHGwbiP5K4ul0Ex10jG0L4Fzl1YOyqMnvCp6sfZami"
-        }
-    ]
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Alejandro",
+      "email": "ale@dh.com",
+      "password": "$2y$10$723pGHduaz4rGUcDtnkuleyKm63ZhiONzSSOYKY9/IkWCeugVRJF6"
+    },
+    {
+      "id": 2,
+      "nombre": "Karly",
+      "email": "karly@dh.com",
+      "password": "$2y$10$pFRjP7H8LrlIRWDPZ8Tu3enzZXtGsDg/NdBzNgOF4kiFvfvmgBZ3a"
+    }
+  ]
 }
