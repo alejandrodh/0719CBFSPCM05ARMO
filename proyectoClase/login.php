@@ -7,7 +7,7 @@ if($_POST){
   $errores = validarLogin($_POST);
 
   if(!$errores){
-    loguearUsuario();
+    loguearUsuario($_POST['email']);
     header("Location:index.php");
     exit;
   }

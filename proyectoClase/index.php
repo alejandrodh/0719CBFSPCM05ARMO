@@ -1,7 +1,11 @@
 <?php
 include "funciones.php";
 
-var_dump($_SESSION);
+// var_dump($_SESSION);
+if (usuarioLogueado()){
+    $imagen = glob("avatar/".$_SESSION['email'].".*")[0]; //glob() retorna un array de coincidencias. Debería haber 1 sola imágen para cada usuario por lo tanto traemos la posición 0.
+    $usuario = buscarUsuarioPorMail($_SESSION['email']); //Traemos los datos del usuario para poder mostrar el mail.
+}
 
 ?>
 
@@ -32,9 +36,16 @@ var_dump($_SESSION);
     <div class="container">
       <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4 pt-1">
-              <a class="btn btn-warning" href="register.php">Signup</a>
-          </div>
+          <?php if (usuarioLogueado()): ?>
+            <div class="col-4 pt-1">
+              <img class="avatar" src="<?= $imagen ?>" alt="">
+              <span> <?=$usuario['email'] ?></span>
+            </div>
+          <?php else: ?>
+            <div class="col-4 pt-1">
+                <a class="btn btn-warning" href="register.php">Signup</a>
+            </div>
+          <?php endif ?>
           <div class="col-4 text-center">
             <a class="blog-header-logo text-dark" href="index.php">Large</a>
           </div>

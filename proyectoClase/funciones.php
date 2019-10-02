@@ -42,10 +42,27 @@ function validarRegistro($datos){
     $errores["pass2"] = "Las contraseñas no coiniceden";
   }
 
+  //Validar errores en la carga de la imagen de perfil.
+  if(strlen($_FILES['avatar']['name']) == 0){
+    $errores['avatar'] = "Por favor suba una imagen de perfil.";
+  } else {
+    $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
+
+    if($ext !== "jpg" && $ext !== "png" && $ext !== "jpeg"){
+      $errores['avatar'] = "El archivo debe ser una imagen de tipo .jpg, .jpeg, .png";
+    }
+
+  }
+
+
   return $errores;
 }
 
 function nextId(){
+  if(!file_exists("db.json")){
+    return 1;
+  }
+
   $json = file_get_contents("db.json");
   $array = json_decode($json, true);
 
@@ -73,7 +90,7 @@ function guardarUsuario($user){
   } else{
     $json = "";
   }
-  
+
   $array = json_decode($json, true);
   $array["usuarios"][] = $user;
 
@@ -83,13 +100,12 @@ function guardarUsuario($user){
 
 function buscarUsuarioPorMail($email){
   //¿Qué pasa si no hay archivo .json
-  if(file_exists("db.json")){
+  if(!file_exists("db.json")){
+    $array['usuarios'] = [];
+  } else {
     $json = file_get_contents("db.json");
-  } else{
-    $json = "";
+    $array = json_decode($json, true);
   }
-
-  $array = json_decode($json, true);
 
   foreach ($array["usuarios"] as $usuario) {
     if($usuario["email"] == $email){

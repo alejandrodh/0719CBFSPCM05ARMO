@@ -28,6 +28,8 @@ if($_POST){
     guardarUsuario($usuario);
 
     //Subir la imagen de perfil
+    $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
+    move_uploaded_file($_FILES["avatar"]['tmp_name'], "avatar/".$_POST['email']. "." . $ext );
 
     //Auto Loguear usuario (Opcional);
 
@@ -183,6 +185,11 @@ if($_POST){
           <label for="avatar">Imagen de perfil</label>
           <input type="file" id="avatar" class="form-control" name="avatar">
           <span class="small text-danger"></span>
+          <small id="emailHelp" class="form-text text-danger">
+            <?php if(isset($errores['avatar'])) :?>
+              <?= $errores['avatar'] ?>
+            <?php endif ?>
+          </small>
 
         </div>
 
