@@ -1,6 +1,11 @@
 .DS_Store
 /proyectos-integradores
+
 /proyectoClase/avatar/*
+!/proyectoClase/avatar/*.md
+
 /proyectoClase+oop/avatar/*
+!/proyectoClase+oop/avatar/*.md
+
 /proyectoClase/db.json
 /proyectoClase+oop/db.json
