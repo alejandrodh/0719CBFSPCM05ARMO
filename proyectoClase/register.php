@@ -32,6 +32,7 @@ if($_POST){
     move_uploaded_file($_FILES["avatar"]['tmp_name'], "avatar/".$_POST['email']. "." . $ext );
 
     //Auto Loguear usuario (Opcional);
+    loguearUsuario($_POST['email']);
 
     //Redirigirlo a página Exito;
     header("Location:index.php");
