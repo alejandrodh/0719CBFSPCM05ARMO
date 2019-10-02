@@ -1,5 +1,11 @@
 <?php
 include "funciones.php";
+
+if(usuarioLogueado()){
+  header("Location:index.php");
+  exit;
+}
+
 $errores = [];
 
 if($_POST){

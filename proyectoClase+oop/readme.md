@@ -19,3 +19,10 @@ Corresponde a la clase virtual del día 26/9/19.
 5. Refactorizamos la función `buscarUsuarioPorMail()` para que develva un objeto Usuario en lugar de un array con los datos del usuario.
 6. Restringimos el acceso a login.php y a register.php a los usuarios que ya están logueados.
 7. Modificamos los atributos "name" de las contraseñas para que todos estén definidos con el valor "password".
+
+### Novedades post clase
+1. Agregamos validaciones para subir imágenes.
+2. Agregamos controles en el login para que no rompa si el archivo `.json` no existe.
+3. Agregamos controles para crear el archivo `.json` en caso de que no exista aún. Se crea con con el primer usuario que se registra.
+4. Autologueamos al usuario al terminar la registración.
+5. Modificamos `.gitignore` para que no suba al repo el archivo `db.json` ni las imágenes a la carpeta `/avatar`. Todo el sistema debería funcionar correctamente desde el primer registro de un usuario.

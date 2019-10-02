@@ -1,5 +1,12 @@
 <?php
 include "funciones.php";
+
+if(usuarioLogueado()){
+  header("Location:index.php");
+  exit;
+}
+
+
 $errores = [];
 $nombreOk = "";
 $emailOk = "";

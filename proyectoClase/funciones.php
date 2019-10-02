@@ -133,11 +133,11 @@ function validarLogin($datos){
   //Password
   if(strlen($datos["pass"]) == 0){
     $errores["pass"] = "El campo password debe estar completo";
-  } else {
-    $usuario = buscarUsuarioPorMail($datos["email"]);
-    if( !password_verify($datos["pass"], $usuario["password"]) ){
-    $errores["pass"] = "La contraseña ingresada es incorrecta";
-    }
+  } else if(buscarUsuarioPorMail($datos["email"])){
+      $usuario = buscarUsuarioPorMail($datos["email"]);
+      if( !password_verify($datos["pass"], $usuario["password"]) ){
+        $errores["pass"] = "La contraseña ingresada es incorrecta";
+      }
   }
 
   return $errores;

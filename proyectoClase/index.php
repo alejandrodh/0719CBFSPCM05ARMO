@@ -1,14 +1,18 @@
 <?php
 include "funciones.php";
 
+//si tengo la cookie entonces logue al usuario.
+if(isset($_COOKIE['email'])){
+  loguearUsuario($_COOKIE['email']);
+}
+
 // var_dump($_SESSION);
 if (usuarioLogueado()){
-    $imagen = glob("avatar/".$_SESSION['email'].".*")[0]; //glob() retorna un array de coincidencias. Debería haber 1 sola imágen para cada usuario por lo tanto traemos la posición 0.
+    $imagen = glob("avatar/".$_SESSION['email'].".*")[0]; //glob() retorna un array de coincidencias. Debería haber 1 sola imagen para cada usuario por lo tanto traemos la posición 0.
     $usuario = buscarUsuarioPorMail($_SESSION['email']); //Traemos los datos del usuario para poder mostrar el mail.
 }
 
 ?>
-
 
 
 <!doctype html>

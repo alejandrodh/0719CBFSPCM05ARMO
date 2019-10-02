@@ -9,12 +9,13 @@ if(isset($_COOKIE['email'])){
 
 if($auth->usuarioLogueado()){
     $usuario = $json->buscarUsuarioPorMail($_SESSION['email']);
+    $imagen = glob("avatar/".$_SESSION['email'].".*")[0]; //glob() retorna un array de coincidencias. Debería haber 1 sola imagen para cada usuario por lo tanto traemos la posición 0.
 } else {
   $usuario = "";
 }
 
 
-var_dump($_SESSION, $usuario);
+//var_dump($_SESSION, $usuario);
 
 ?>
 
@@ -45,13 +46,16 @@ var_dump($_SESSION, $usuario);
     <div class="container">
       <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4 pt-1">
-            <?php if(!$auth->usuarioLogueado()):?>
-              <a class="btn btn-warning" href="register.php">Signup</a>
-            <?php endif ?>
-          </div>
-
-
+          <?php if ($auth->usuarioLogueado()): ?>
+            <div class="col-4 pt-1">
+              <img class="avatar" src="<?= $imagen ?>" alt="">
+              <span> <?= $usuario->getEmail() ?></span>
+            </div>
+          <?php else: ?>
+            <div class="col-4 pt-1">
+                <a class="btn btn-warning" href="register.php">Signup</a>
+            </div>
+          <?php endif ?>
           <div class="col-4 text-center">
             <a class="blog-header-logo text-dark" href="index.php">Large</a>
           </div>
@@ -60,7 +64,6 @@ var_dump($_SESSION, $usuario);
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
             </a>
             <?php if($auth->usuarioLogueado()):?>
-              <span>Hola: <?= $usuario->getEmail()?></span>
               <a class="btn btn-danger" href="logout.php">Logout</a>
             <?php else: ?>
               <a class="btn btn-success" href="login.php">Login</a>
