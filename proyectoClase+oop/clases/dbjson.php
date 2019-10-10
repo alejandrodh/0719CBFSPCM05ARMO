@@ -39,7 +39,7 @@ class DbJson extends Db
     file_put_contents($file, $json);
   }
 
-  function buscarUsuarioPorMail(string $email){
+  public function buscarUsuarioPorMail(string $email){
     $array = json_decode($this->json, true);
 
     foreach ($array["usuarios"] as $usuario) {
@@ -53,7 +53,7 @@ class DbJson extends Db
     return null;
   }
 
-  function nextId(){
+  public function nextId(){
     $array = json_decode($this->json, true);
 
     $lastUser = array_pop($array["usuarios"]);
