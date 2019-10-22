@@ -6,7 +6,8 @@ class Validator
 {
 
   public static function validarRegistro($datos){
-    global $json;
+    //global $json;
+    global $db;
 
     $errores = [];
 
@@ -33,7 +34,7 @@ class Validator
       $errores["email"] = "El campo email debe estar completo";
     } else if(!filter_var($datosFinales["email"], FILTER_VALIDATE_EMAIL)){
       $errores["email"] = "Por favor ingrese un email con formato válido";
-    } else if($json->buscarUsuarioPorMail($datosFinales["email"])) {
+    } else if($db->buscarUsuarioPorMail($datosFinales["email"])) {
       $errores["email"] = "El email ya existe. Por favor elija otro.";
     }
 
@@ -64,7 +65,7 @@ class Validator
   }
 
   public static function validarLogin($datos){
-    global $json;
+    global $db;
     $errores = [];
 
     //Email
@@ -72,15 +73,15 @@ class Validator
       $errores["email"] = "El campo email debe estar completo";
     } else if(!filter_var($datos["email"], FILTER_VALIDATE_EMAIL)){
       $errores["email"] = "Por favor ingrese un email con formato válido";
-    } else if(!$json->buscarUsuarioPorMail($datos["email"])) {
+    } else if(!$db->buscarUsuarioPorMail($datos["email"])) {
       $errores["email"] = "El usuario no existe Por favor regístrese.";
     }
 
     //Password
     if(strlen($datos["password"]) == 0){
       $errores["password"] = "El campo password debe estar completo";
-    } else if($json->buscarUsuarioPorMail($datos["email"])){
-        $usuario = $json->buscarUsuarioPorMail($datos["email"]);
+    } else if($db->buscarUsuarioPorMail($datos["email"])){
+        $usuario = $db->buscarUsuarioPorMail($datos["email"]);
 
         if( !password_verify($datos["password"], $usuario->getPassword()) ){
           $errores["password"] = "La contraseña ingresada es incorrecta";

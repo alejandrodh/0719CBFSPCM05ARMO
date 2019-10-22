@@ -36,7 +36,7 @@ if($_POST){
 
     //Guardarlo en alguna parte
     //guardarUsuario($usuario);
-    $json->guardarUsuario($usuario, $file);
+    $db->guardarUsuario($usuario, $file);
 
     //Subir la imagen de perfil
     $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);

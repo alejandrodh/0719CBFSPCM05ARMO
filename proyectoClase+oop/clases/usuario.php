@@ -15,12 +15,17 @@ class Usuario
   function __construct(Array $array)
   {
     // 2 Origenes: 1ra es desde el formulario de registro. 2da
-    global $json; //Tremos la instancia de base de datos para poder usarla. Otra opción es pasarla por parámetro.
+    global $db; //Tremos la instancia de base de datos para poder usarla. Otra opción es pasarla por parámetro.
+
     if(isset($array["id"])){
       $this->id = $array["id"];
       $this->password = $array["password"];
     } else {
-      $this->id = $json->nextId(); //nextID();
+      if ($db instanceof DbJson ){
+        $this->id = $json->nextId(); //nextID();
+      } else {
+        $this->id = null;
+      }
       $this->password = password_hash($array["password"], PASSWORD_DEFAULT);
     }
     $this->name = $array["name"];

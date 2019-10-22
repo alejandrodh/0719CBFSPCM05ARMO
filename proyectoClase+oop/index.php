@@ -8,7 +8,7 @@ if(isset($_COOKIE['email'])){
 }
 
 if($auth->usuarioLogueado()){
-    $usuario = $json->buscarUsuarioPorMail($_SESSION['email']);
+    $usuario = $db->buscarUsuarioPorMail($_SESSION['email']);
     $imagen = glob("avatar/".$_SESSION['email'].".*")[0]; //glob() retorna un array de coincidencias. Debería haber 1 sola imagen para cada usuario por lo tanto traemos la posición 0.
 } else {
   $usuario = "";

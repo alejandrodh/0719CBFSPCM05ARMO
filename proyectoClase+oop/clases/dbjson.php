@@ -3,7 +3,6 @@
 /**
  *
  */
-include "db.php";
 
 class DbJson extends Db
 {
