@@ -21,6 +21,7 @@ class Usuario
       $this->id = $array["id"];
       $this->password = $array["password"];
     } else {
+      //Este if resuelve si usamos json o mysql
       if ($db instanceof DbJson ){
         $this->id = $json->nextId(); //nextID();
       } else {
