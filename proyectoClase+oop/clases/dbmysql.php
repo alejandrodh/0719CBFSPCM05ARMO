@@ -9,9 +9,18 @@ class DbMysql extends db
 
   public function __construct()
   {
-    $dsn = "mysql:host=127.0.0.1;dbname=05armo;port=3306";
-    $user = "root";
-    $pass = "root"; //¿Cómo resolvemos que las contraseñas o usuarios sean diferentes.
+    //Usamos un Json para pasar los datos de conexión a la db.
+    $config = file_get_contents("../config.json");
+    $json = json_decode($config, true);
+
+    $host = $json["host"];;
+    $dbname = $json["dbname"];;
+    $port = $json["port"];
+    // fin datos de conexión en json.
+
+    $dsn = "mysql:host=$host;dbname=$dbname;port=$port";
+    $user = $json["user"];
+    $pass = $json["pass"]; //¿Cómo resolvemos que las contraseñas o usuarios sean diferentes.
 
     try {
       $this->dbMysql = new PDO($dsn, $user, $pass); //Resuelve la conexión.
