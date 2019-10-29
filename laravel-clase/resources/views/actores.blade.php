@@ -8,7 +8,7 @@
     <h1>Listado de actores</h1>
 
     <form class="" action="/actores/buscar" method="get">
-      <input type="text" name="search" value="" placeholder="Ingerese el nombre a buscar">
+      <input type="text" name="search" value="" placeholder="Buscar...">
       <button type="submit">Buscar</button>
     </form>
 
