@@ -1,7 +1,9 @@
-@extends('layout')
+@extends('master')
+
 @section('title')
   Productos
 @endsection
+
 @section('main')
   <h1>Lista de productos</h1>
   <ul>

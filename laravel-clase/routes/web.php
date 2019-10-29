@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     //return view('welcome'); //vista fija.
-    return view('home'); //vista fija.
+    return view('welcome'); //vista fija.
 });
 
 Route::get('/unparametro/{param}', function($param){
@@ -39,13 +39,16 @@ Route::get('/peliculas', function(){
   ];
   //$peliculas = [];
 
-  return view('home', compact('peliculas'));
+  return view('peliculas', compact('peliculas'));
 
 });
 
 Route::get('/lista-productos', function(){
   return view('productos');
 });
+
+Route::get('/movies', 'movieController@index');
+Route::get('/movies/{id}', 'movieController@show');
 
 
 

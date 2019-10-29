@@ -1,4 +1,5 @@
-@extends('layout')
+@extends('master')
+
 @section('title', 'Home')
 
 @section('main')
@@ -20,7 +21,7 @@
       <ul>
         @foreach($peliculas as $pelicula)
           @if($pelicula !== "The Mule")
-            <li>{{ $pelicula }}</li>
+            <li>{{ $pelicula }}   </li>
           @endif
         @endforeach
       </ul>
@@ -28,8 +29,8 @@
       <h3>Lista con Forelse</h3>
 
       @forelse ($peliculas as $pelicula)
-        @if($pelicula !== "The Mule")
-          <li>{{ $pelicula }}</li>
+        @if( $pelicula !== "The Mule")
+          <li>{{  $pelicula }}</li>
         @endif
 
       @empty

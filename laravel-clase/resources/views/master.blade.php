@@ -11,8 +11,7 @@
     <div class="container">
       <p>Navegación</p>
       <a class="btn btn-info" href="/lista-productos">Lista de Prodcutos</a>
-      <a class="btn btn-info" href="/peliculas">Peliculas</a>
-      <a class="btn btn-info" href="/producto/3">Producto id</a>
+      <a class="btn btn-info" href="/movies">Peliculas</a>
 
       <p>Acá empieza el yield main</p>
       @yield('main')

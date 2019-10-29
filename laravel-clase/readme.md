@@ -7,7 +7,7 @@
 6. Revisar la información de conexión a la db. Son las posicones `DB_ `.
 7. Ejecutar `php artisan serve` para iniciar el servidor web.
 
-**=====================================================**
+**===========================================================================================**
 
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
