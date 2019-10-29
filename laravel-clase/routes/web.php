@@ -47,9 +47,12 @@ Route::get('/lista-productos', function(){
   return view('productos');
 });
 
-Route::get('/movies', 'movieController@index');
-Route::get('/movies/{id}', 'movieController@show');
+Route::get('/movies', 'MovieController@index');
+Route::get('/movies/{id}', 'MovieController@show');
+Route::get('/actores', 'ActorController@directory');
 
+Route::get('/actores/buscar', 'ActorController@search');
+Route::get('/actor/{id}', 'ActorController@show');
 
 
 
