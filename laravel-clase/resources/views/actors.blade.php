@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Listado de actores</h1>
+@extends('master')
 
-    <form class="" action="/actores/buscar" method="get">
+@section('title', 'Actores')
+@section('h1', "Listado de actores")
+
+@section('main')
+
+    <form class="" action="/actors/buscar" method="get">
       <input type="text" name="search" value="" placeholder="Buscar...">
       <button type="submit">Buscar</button>
     </form>
+
+    <p>
+      <a href="/movies">movies</a>
+      <a href="/actors">actors</a>
+   </p>
+
 
     <ul>
       @forelse ($actores as $actor)
@@ -28,5 +32,5 @@
       {{-- {{$actores->links()}} Solo cuando paginamos la lista completa desde el método @directory--}}
     @endif
 
-  </body>
-</html>
+
+@endsection

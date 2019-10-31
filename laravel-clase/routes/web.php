@@ -26,7 +26,7 @@ Route::get('/unparametrooptativo/{param?}', function($param = "no recibí datos.
 
 Route::get('/producto/{id}', function ($id) {
     //$vac = compact('id');
-    return view('home', compact('id')); //vista fija.
+    return view('producto', compact('id')); //vista fija.
 });
 
 Route::get('/peliculas', function(){
@@ -49,9 +49,9 @@ Route::get('/lista-productos', function(){
 
 Route::get('/movies', 'MovieController@index');
 Route::get('/movies/{id}', 'MovieController@show');
-Route::get('/actores', 'ActorController@directory');
+Route::get('/actors', 'ActorController@directory');
 
-Route::get('/actores/buscar', 'ActorController@search');
+Route::get('/actors/buscar', 'ActorController@search');
 Route::get('/actor/{id}', 'ActorController@show');
 
 

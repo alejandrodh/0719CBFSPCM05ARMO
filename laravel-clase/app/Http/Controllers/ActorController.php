@@ -13,7 +13,7 @@ class ActorController extends Controller
       //Si queremos toda la lista de actores paginada:
       //$actores = Actor::paginate(10);
 
-      return view('actores', compact('actores'));
+      return view('actors', compact('actores'));
     }
 
 
@@ -71,7 +71,7 @@ class ActorController extends Controller
       //Mantiene la query string dentro del paginado.
       $actores->withPath('?search='.$_GET['search']);
 
-      return view('actores', compact('actores'));
+      return view('actors', compact('actores'));
     }
 
     /**

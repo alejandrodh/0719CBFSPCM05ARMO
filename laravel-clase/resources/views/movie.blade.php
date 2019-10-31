@@ -1,16 +1,17 @@
 @extends('master')
 
 @section('title', 'Movie')
+@section('h1', "Detalles de una película")
 
 @section('main')
-      <h1>Home de mi proyecto Laravel 5.8</h1>
 
       @isset($pelicula)
-        <p>Usted esta viendo el la película: {{$pelicula->title}}<strong>
+        <p>Usted esta viendo el la película: <strong>{{$pelicula->title}}</strong>
       @endisset
       @empty ($pelicula)
           <p>No hay datos para esta película.</p>
       @endempty
 
+<p> <a href="/actors">Volver</a> </p>
 
 @endsection

@@ -9,13 +9,14 @@
   </head>
   <body>
     <div class="container">
-      <p>Navegación</p>
+      <h1>@yield('h1', "Home de mi proyecto Laravel 5.8")</h1>
       <a class="btn btn-info" href="/lista-productos">Lista de Prodcutos</a>
       <a class="btn btn-info" href="/movies">Peliculas</a>
+      <a class="btn btn-info" href="/actors">Actores</a>
 
-      <p>Acá empieza el yield main</p>
+      <p class="text text-info">Acá empieza el yield main</p>
       @yield('main')
-      <p>Acá termina el yield main</p>
+      <p class="text text-info">Acá termina el yield main</p>
 
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

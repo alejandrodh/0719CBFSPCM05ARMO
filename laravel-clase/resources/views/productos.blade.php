@@ -3,9 +3,9 @@
 @section('title')
   Productos
 @endsection
+@section('h1', "Lista de productos")
 
 @section('main')
-  <h1>Lista de productos</h1>
   <ul>
     <li>prod1</li>
     <li>prod2</li>

@@ -1,9 +1,8 @@
 @extends('master')
 
 @section('title', 'Home')
-
+@section('h1', "Lista de películas")
 @section('main')
-      <h1>Home de mi proyecto Laravel 5.8</h1>
 
       @isset($id)
         <p>Usted esta viendo el producto: {{$id}}<strong>
