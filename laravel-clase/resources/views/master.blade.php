@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href=".....">
+    <link rel="stylesheet" href="/css/master.css">
     <title>@yield('title') | Mi sitio</title>
   </head>
   <body>
@@ -13,6 +13,7 @@
       <a class="btn btn-info" href="/lista-productos">Lista de Prodcutos</a>
       <a class="btn btn-info" href="/movies">Peliculas</a>
       <a class="btn btn-info" href="/actors">Actores</a>
+      <a class="btn btn-info" href="/addmovie">Agregar pelicula</a>
 
       <p class="text text-info">Acá empieza el yield main</p>
       @yield('main')

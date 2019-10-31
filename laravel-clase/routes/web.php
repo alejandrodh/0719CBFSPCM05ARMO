@@ -53,7 +53,8 @@ Route::get('/actors', 'ActorController@directory');
 
 Route::get('/actors/buscar', 'ActorController@search');
 Route::get('/actor/{id}', 'ActorController@show');
-
+Route::get('/addmovie', 'MovieController@create');
+Route::post('/addmovie', 'MovieController@store');
 
 
 
