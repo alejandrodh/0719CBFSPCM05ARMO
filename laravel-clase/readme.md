@@ -1,4 +1,4 @@
-# Pasos para instalar el Proyecto
+# Pasos para instalar el Proyecto cuando clonamos desde un repo
 1. Descargar el repositorio
 2. Por consola ingresar a esta carpeta (`/laravel-clase`).
 3. Ejecutar `composer install` para que composer descargue todas las carpetas y paquetes necesarios para correr Laravel.
