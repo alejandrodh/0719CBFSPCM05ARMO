@@ -64,3 +64,7 @@ Route::post('/addmovie', 'MovieController@store');
 
 
 //
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

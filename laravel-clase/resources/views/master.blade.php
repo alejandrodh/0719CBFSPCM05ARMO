@@ -12,11 +12,14 @@
       <h1>@yield('h1', "Home de mi proyecto Laravel 5.8")</h1>
       <a class="btn btn-info" href="/lista-productos">Lista de Prodcutos</a>
       <a class="btn btn-info" href="/movies">Peliculas</a>
+      <a class="btn btn-warning" href="/addmovie">Agregar pelicula</a>
       <a class="btn btn-info" href="/actors">Actores</a>
-      <a class="btn btn-info" href="/addmovie">Agregar pelicula</a>
 
       <p class="text text-info">Acá empieza el yield main</p>
+
       @yield('main')
+
+      
       <p class="text text-info">Acá termina el yield main</p>
 
     </div>
