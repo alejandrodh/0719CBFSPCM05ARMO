@@ -4,11 +4,11 @@
 1. Descragar Laravel.
 2. Crear la estructura de login/ registro con `auth`.
 3. Crear base de datos y pasar las credenciales a el archivo `.env`
-3. Para impactar los cambios en `.env` es **necesario** reiniciar el servidor.
+3. Para que impacten los cambios de `.env` en el sistema es **necesario** reiniciar el servidor.
 4. Correr migraciones de `auth` para chequear que todo funcione ok.
 4. Si da error "SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes" ir a "https://laravel-news.com/laravel-5-4-key-too-long-error" y seguir los pasos.
-5. Correr migrations y verificar que todo está ok.
-6. Crear tablas adicionales usando migrations. Podemos usar el comando `php artisan make:model Modelo -a` y creamos todo junto.
+5. Correr nuevamente migrations con la opción `:fresh ` y verificar que todo está ok.
+6. Crear tablas adicionales usando migrations. Podemos usar el comando `php artisan make:model Modelo -a` y creamos todo junto (Modelo, Controlador, Migración y Factory).
 7. Modificar los modelos para que permitan guardado masivo de datos. `private $guarded = [];`
 8. Crear las relaciones de las tablas en los Modelos.
 9. Si vamos a necesitar varios usuarios, correr el seeder llamando al factory de usuarios (ya viene creado por `auth`)
@@ -17,7 +17,7 @@
 11. Crear link a storage `php artisan storage:link` para que el front pueda levantar correctamente las imágenes que necesite.
 
 ### Front.
-Una vez que tenemos datos en la db comenzamos a llamarlos desde las vistas de acuerdo a la lógica de cada página.
+Una vez que tenemos datos en la db comenzamos a trabajar con las vistas de acuerdo a la lógica de cada página.
 
 
 **Parte 2: Clase presencial 2019 11 12***
