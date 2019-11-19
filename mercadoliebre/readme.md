@@ -9,7 +9,7 @@
 4. Si da error "SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes" ir a "https://laravel-news.com/laravel-5-4-key-too-long-error" y seguir los pasos.
 5. Correr nuevamente migrations con la opción `:fresh ` y verificar que todo está ok.
 6. Crear tablas adicionales usando migrations. Podemos usar el comando `php artisan make:model Modelo -a` y creamos todo junto (Modelo, Controlador, Migración y Factory).
-7. Modificar los modelos para que permitan guardado masivo de datos. `private $guarded = [];`
+7. Modificar los modelos para que permitan guardado masivo de datos. `protected $guarded = [];`
 8. Crear las relaciones de las tablas en los Modelos.
 9. Si vamos a necesitar varios usuarios, correr el seeder llamando al factory de usuarios (ya viene creado por `auth`)
 9. Crear factory de productos. Tener en cuenta que la relación `usuarios_productos` cuando creemos los datos fake. El producto debe recibir el id de un usuario existente en la tabla `users`
