@@ -16,7 +16,12 @@
       <h3>{{$productDetail->name}}</h3>
       <p>{{$productDetail->description}}</p>
       <p>Precio: {{$productDetail->price}}</p>
-      <a href="" class="btn btn-success">Agregar al carrito</a>
+      <form class="" action="/addtocart" method="post">
+        @csrf
+        <input type="hidden" name="id" value="{{$productDetail->id}}">
+        <button class="btn btn-success" type="submit">Agregar al carrito</a>
+      </form>
+
     </article>
 </div>
 @endsection

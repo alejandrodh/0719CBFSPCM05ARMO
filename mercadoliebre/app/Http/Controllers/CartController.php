@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Product;
+use Auth;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -14,7 +16,9 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+      $cart = Cart::where("user_id", Auth::user()->id)->where("status",0)->get();
+
+      return view('cart', compact('cart'));
     }
 
     /**
@@ -24,7 +28,7 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+      //
     }
 
     /**
@@ -35,7 +39,19 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = Product::find($request->id);
+
+        $item = new Cart;
+        $item->name = $product->name;
+        $item->description = $product->description;
+        $item->price = $product->price;
+        $item->featured_img = $product->featured_img;
+        $item->cant = 1;
+        $item->user_id = Auth::user()->id;
+        $item->status = 0; //producto no comprado.
+
+        $item->save();
+        return redirect('home');
     }
 
     /**
@@ -82,4 +98,33 @@ class CartController extends Controller
     {
         //
     }
+
+    public function cartclose(Request $req){
+
+      //traigo todos los productos del carrtito del usuario logueado.
+      $items = Cart::where("user_id", Auth::user()->id)->where("status",0)->get();
+      $cart_number = Cart::max('cart_number') +1;
+
+      foreach($items as $item){
+        $item->status = 1;
+        $item->cart_number = $cart_number;
+        $item->save();
+      }
+
+      return redirect('home');
+
+    }
+
+    public function history(){
+      $carts = Cart::where('user_id', Auth::user()->id)
+                    ->where("status",1)->get()
+                    ->groupBy('cart_number'); //todos los nros de carrito del usuario.
+
+      return view('history', compact('carts'));
+
+
+    }
+
+
+
 }
