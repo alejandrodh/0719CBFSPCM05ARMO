@@ -19,7 +19,8 @@ class Roles
         if(Auth::user()->rol == 100){
           return $next($request);
         } else {
-          return redirect('/home');
+          return redirect('/home
+          ');
         }
 
 
