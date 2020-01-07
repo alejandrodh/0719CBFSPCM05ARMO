@@ -40,7 +40,7 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $product = Product::find($request->id);
-
+        die(Product::class);
         $item = new Cart;
         $item->name = $product->name;
         $item->description = $product->description;

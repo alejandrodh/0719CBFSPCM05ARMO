@@ -17,7 +17,7 @@
 
       <p>Esto es un párrafo</p>
 
-      <ul>
+      <ul class="peliculas">
         @foreach($peliculas as $pelicula)
           @if($pelicula->title !== "The Mule")
             <li> <a href="/movies/{{$pelicula->id}}">{{ $pelicula->title }}</a>

@@ -48,6 +48,7 @@ Route::get('/lista-productos', function(){
 });
 
 Route::get('/movies', 'MovieController@index');
+//Route::get('/moviesapi', 'MovieController@indexapi'); //para API;
 Route::get('/movies/{id}', 'MovieController@show');
 Route::get('/actors', 'ActorController@directory');
 

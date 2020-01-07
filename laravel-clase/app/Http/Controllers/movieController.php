@@ -121,7 +121,12 @@ class movieController extends Controller
         //
     }
 
-    public function miFuncion(){
+    public function indexApi(){
+      $peliculas = Movie::all();
+      //$json = json_encode($peliculas, JSON_PRETTY_PRINT);  //Para devolver json desde ruta en web.php
+
+      // return $json; //Para devolver json desde ruta en web.php
+      return $peliculas;
 
     }
 }
