@@ -30,6 +30,14 @@ Route::get('/peliculasparamoptativo/{id?}', function($id = "No pasaste una pelí
 Route::get('/actores', 'ActorsController@index');
 
 
+Route::get('/home', function(){
+  return view('index');
+});
+Route::get('/contacto', function(){
+  return view('contacto');
+});
+
+
 
 
 
@@ -37,3 +45,7 @@ Route::get('/actores', 'ActorsController@index');
 
 
 //
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

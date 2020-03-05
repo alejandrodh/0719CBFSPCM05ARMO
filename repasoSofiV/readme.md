@@ -19,5 +19,5 @@ Controladores
 Modelos
 
 ###Repaso de Laravel 2
-Blade
-Auth
+Blade: motor de templates/ vistas.
+Auth: autogenerador de una estructura de registro y login.
